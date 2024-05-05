@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        int a[]=new int []{-10,-3,-2,1,4,5};
+        int left=0;
+        int n=a.length;
+        int i=0;
+        int ans[]=new int[n];
+        int right=a.length-1;
+        while(left<=right){
+            if(Math.abs(a[left])>=Math.abs(a[right])){
+                ans[i++]=a[left]*a[left];
+                left++;
+            }
+            else{
+                ans[i++]=a[right]*a[right];
+                right--;
+            }
+        }
+        System.out.println(Arrays.toString(ans));
+    }
+}
