@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        int a[]=new int[]{5,3,2,6,3,1};
+        int n=a.length;
+        for(int i=1;i<n;i++){
+            a[i]+=a[i-1];
+        }
+        System.out.println("prefix sum array");
+        for(int i:a){
+            System.out.print(i+"  ");
+        }
+        int sum=a[n-1];
+        System.out.println("\nsuffix sum array");
+        int suffix[]=new int[n];
+        suffix[0]=sum;
+        for(int i=1;i<n;i++){
+            suffix[i]=sum-a[i-1];
+        }
+        System.out.println(Arrays.toString(suffix));
+    }
+}
