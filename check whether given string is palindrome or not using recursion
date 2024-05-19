@@ -1,0 +1,12 @@
+public class Main{
+    public static boolean palindrome(String s,int i){
+        int n=s.length();
+        if(i>=n/2) return true;
+        if(s.charAt(i)!=s.charAt(n-i-1)) return false;
+        return palindrome(s,i+1);
+    }
+    public static void main(String args[]){
+        String n="madam";
+        System.out.println(palindrome(n,0));        
+    }
+}
