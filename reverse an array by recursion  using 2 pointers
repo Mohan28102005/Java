@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main{
+    public static void swap(int a[],int left,int right){
+        int t=a[left];
+        a[left]=a[right];
+        a[right]=t;
+    }
+    public static void reverse(int a[],int left,int right){
+        if(left>=right){
+            return;
+        }
+        swap(a,left,right);
+        reverse(a,left+1,right-1);
+    }
+    public static void main(String args[]){
+        int a[]={1,2,3,4,5};
+        int n=a.length;
+        reverse(a,0,n-1);
+        System.out.println(Arrays.toString(a));
+    }
+}
