@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main{
+    public static void subsequences(int i,int n,int a[],ArrayList<Integer> l1){
+        if(i>=n){
+            System.out.println(l1);
+            return;
+        }
+        l1.add(a[i]);
+        subsequences(i+1,n,a,l1);
+        l1.remove(l1.size() - 1);
+        subsequences(i+1,n,a,l1);
+    }
+    public static void main(String args[]){
+        int a[]={3,1,2};
+        int n=a.length;
+        ArrayList <Integer> l1=new ArrayList <>();
+        System.out.println(l1);
+        subsequences(0,n,a,l1);
+    }
+}
